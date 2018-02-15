@@ -1,0 +1,16 @@
+<nav aria-label="Page navigation">
+    <ul ng-class="styleClass">
+        <li ng-repeat="page in pages"
+            ng-class="{'active': page.number == currentPage && !page.text, 'disabled': page.disabled}"
+            ng-init="$last && endNgRepeat()">
+        	<a
+                href="javascript:"
+        		ng-click="!page.disabled && tryToChangePage($event, page.number);"
+        		ng-bind="page.text || page.number"
+        		ng-class="{'page-number' : !page.text}">
+        	</a>
+            <!-- ng-bind="page.text || page.number" -->
+            <!-- href="{{page.url ? page.url : 'javascript:'}}" -->
+        </li>
+    </ul>
+</nav>

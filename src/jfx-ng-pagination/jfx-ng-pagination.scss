@@ -1,0 +1,13 @@
+ul.jfx-ng-pagination.jfx-ng-pagination-simple{
+	list-style-type: none;
+	li{
+		display: inline-block;
+		padding: 2px;
+		&.active{
+			font-weight: bold;
+		}
+		a{
+			text-decoration: none;
+		}
+	}
+}

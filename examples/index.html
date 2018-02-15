@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>jfx-ng-pagination</title>
+	<!-- inject:css -->
+	<link rel="stylesheet" href="bundle.css">
+	<!-- endinject -->
+	<style>
+		body{padding:20px;}
+	</style>
+</head>
+<body>
+	<h1>jfx-ng-pagination</h1>
+	<section ng-controller="appCtrl">
+		<h2>Scope</h2>
+		<jfx-ng-pagination
+			current-page="pagination.page"
+			page-size="pagination.limit"
+			total-items="pagination.records">
+		</jfx-ng-pagination>
+		<span>page: {{pagination.page}}, limit: {{pagination.limit}}, records: {{pagination.records}}</span>
+		<h2>Page changed</h2>
+		<jfx-ng-pagination
+			current-page="1"
+			page-size="10"
+			total-items="200"
+			page-changed="pageChanged(page)">
+		</jfx-ng-pagination>
+		<h2>Before changed</h2>
+		<jfx-ng-pagination
+			current-page="1"
+			page-size="10"
+			total-items="300"
+			before-change="beforeChangePage()"
+			page-changed="pageChanged(page)">
+		</jfx-ng-pagination>
+		<h2>Set style class</h2>
+		<jfx-ng-pagination
+			current-page="1"
+			page-size="10"
+			total-items="200"
+			style-class="pagination pagination-sm">
+		</jfx-ng-pagination>
+	</section>
+	<!-- inject:js -->
+	<script src="bundle.js"></script>
+	<script src="app.js"></script>
+	<!-- endinject -->
+</body>
+</html>

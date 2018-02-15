@@ -1,0 +1,9 @@
+{
+	"project" : { 
+		"name" : "jfx-ng-pagination",
+		"public_dir" : "examples"
+	},
+	"browser_sync" : {
+		
+	}
+}
