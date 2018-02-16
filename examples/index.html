@@ -16,30 +16,42 @@
 		<h2>Scope</h2>
 		<jfx-ng-pagination
 			current-page="pagination.page"
-			page-size="pagination.limit"
-			total-items="pagination.records">
+			limit="pagination.limit"
+			records="pagination.records">
 		</jfx-ng-pagination>
 		<span>page: {{pagination.page}}, limit: {{pagination.limit}}, records: {{pagination.records}}</span>
+		<h2>Pages displayed</h2>
+		<jfx-ng-pagination
+			limit="10"
+			records="500"
+			pages-displayed="5">
+		</jfx-ng-pagination>
+		<jfx-ng-pagination
+			current-page="1"
+			limit="10"
+			records="500"
+			pages-displayed="21">
+		</jfx-ng-pagination>
 		<h2>Page changed</h2>
 		<jfx-ng-pagination
 			current-page="1"
-			page-size="10"
-			total-items="200"
-			page-changed="pageChanged(page)">
+			limit="10"
+			records="200"
+			on-page-changed="pageChanged(page)">
 		</jfx-ng-pagination>
 		<h2>Before changed</h2>
 		<jfx-ng-pagination
 			current-page="1"
-			page-size="10"
-			total-items="300"
+			limit="10"
+			records="300"
 			before-change="beforeChangePage()"
-			page-changed="pageChanged(page)">
+			on-page-changed="pageChanged(page)">
 		</jfx-ng-pagination>
 		<h2>Set style class</h2>
 		<jfx-ng-pagination
 			current-page="1"
-			page-size="10"
-			total-items="200"
+			limit="10"
+			records="200"
 			style-class="pagination pagination-sm">
 		</jfx-ng-pagination>
 	</section>

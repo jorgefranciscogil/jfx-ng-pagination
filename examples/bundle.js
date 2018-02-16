@@ -22,11 +22,11 @@
 			templateUrl : 'jfx-ng-pagination.tpl.html',
 			scope : {
 				currentPage : "=?",
-				pageSize : "=",
-				totalItems : "=",
+				limit : "=",
+				records : "=",
 				pagesDisplayed : "=?",
 				beforeChange : "&?",
-				pageChanged : "&",
+				onPageChanged : "&",
 				styleClass : "@?"
 			},
 			controller : ['$scope', '$location', '$window', '$timeout', '$q',
@@ -125,10 +125,10 @@
 					return items;
 				};
 
-				s.$watchGroup(['totalItems', 'pageSize'], function(totalItems){ if(!totalItems) return;
+				s.$watchGroup(['records', 'limit'], function(value){ if(!value) return;
 					
 					s.pages = [];
-					s.numPages = Math.ceil(s.totalItems / s.pageSize);
+					s.numPages = Math.ceil(s.records / s.limit);
 					s.split = s.numPages > s.pagesDisplayed;
 
 					s.pages = s.createPaginationWindow();
@@ -147,7 +147,7 @@
 					.then(function(){
 						s.currentPage = page;
 						s.pages = s.createPaginationWindow();
-						s.pageChanged({page:s.currentPage});
+						s.onPageChanged({page:s.currentPage});
 					})
 					.catch(function(){
 						console.log("NOT CHANGE!!!");
