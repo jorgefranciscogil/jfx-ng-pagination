@@ -1,12 +1,17 @@
 {
   "name": "jfx-ng-pagination",
+  "version": "0.9.0-beta.1",
   "authors": [
     "Jorge Francisco Gil <consulting@jorge-francisco.com>"
   ],
   "description": "",
   "main": "",
+  "keywords": [
+    "pagination",
+    "paging"
+  ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "http://www.jorge-francisco.com",
   "ignore": [
     "**/.*",
     "node_modules",
