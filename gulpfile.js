@@ -52,7 +52,7 @@ gulp
 })
 .task('build:component:scss', function(){
 	var str = '/* inject:scss */ /* endinject */';
-	componentCss = $.file('app.scss', str, { src: true })
+	componentCss = $.file([config.project.name,'scss'].join('.'), str, { src: true })
   	.pipe($.debug({title: 'APP SASS File:'}))
   	.pipe($.inject(gulp.src(path.join('src',config.project.name,'*.scss'), {read: false}), {
             starttag: '/* inject:scss */',
@@ -63,6 +63,7 @@ gulp
     }))
     .pipe($.sass())
     .pipe($.debug({title: 'APP CSS File:'}))
+    .pipe(gulp.dest('dist'));
 })
 .task('build:component:css', ['bower:css', 'build:component:scss'], function(){
 	/*componentCss = gulp.src(path.join('src',config.project.name,'*.scss'))

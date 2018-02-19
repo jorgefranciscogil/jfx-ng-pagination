@@ -1,0 +1,12 @@
+/* inject:scss */
+ul.jfx-ng-pagination.jfx-ng-pagination-simple {
+  list-style-type: none; }
+  ul.jfx-ng-pagination.jfx-ng-pagination-simple li {
+    display: inline-block;
+    padding: 2px; }
+    ul.jfx-ng-pagination.jfx-ng-pagination-simple li.active {
+      font-weight: bold; }
+    ul.jfx-ng-pagination.jfx-ng-pagination-simple li a {
+      text-decoration: none; }
+
+/* endinject */

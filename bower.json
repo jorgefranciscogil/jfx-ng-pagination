@@ -5,7 +5,10 @@
     "Jorge Francisco Gil <consulting@jorge-francisco.com>"
   ],
   "description": "",
-  "main": "",
+  "main": [
+    "dist/jfx-ng-pagination.js",
+    "dist/jfx-ng-pagination.css"
+  ],
   "keywords": [
     "pagination",
     "paging"
